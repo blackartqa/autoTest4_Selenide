@@ -17,11 +17,12 @@ public class CardDeliveryTest {
     @Test
     void shouldDeliveryRequestSuccess() {
 
-        String dateOfMeeting = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        String dateOfMeeting = LocalDate.now().plusDays(15).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
         open("http://localhost:9999/");
         $("[placeholder='Город']").setValue("Санкт-Петербург");
-        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
+        $("[placeholder='Дата встречи']").doubleClick();
+        $("[placeholder='Дата встречи']").sendKeys(Keys.DELETE);
         $("[placeholder='Дата встречи']").setValue(dateOfMeeting);
         $("[name='name']").setValue("Чернышов Артем");
         $("[name='phone']").setValue("+75555555555");
