@@ -22,6 +22,7 @@ public class CardDeliveryTest {
 
         open("http://localhost:9999/");
         $("[placeholder='Город']").setValue("Санкт-Петербург");
+        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[placeholder='Дата встречи']").setValue(dateOfMeeting);
         $("[name='name']").setValue("Чернышов Артем");
         $("[name='phone']").setValue("+75555555555");
